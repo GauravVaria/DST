@@ -36,13 +36,11 @@ void traverse()
 // of the linked list
 void insertAtFront()
 {
-    int data;
     struct node *temp;
-    temp = malloc(sizeof(struct node));
+    temp =(struct node *) (struct node *) malloc(sizeof(struct node));;
     printf("\nEnter number to"
            " be inserted : ");
-    scanf("%d", &data);
-    temp->data = data;
+    scanf("%d", &temp->data);
 
     // Pointer of temp will be
     // assigned to start
@@ -54,18 +52,16 @@ void insertAtFront()
 // the linked list
 void insertAtEnd()
 {
-    int data;
     struct node *temp, *head;
-    temp = malloc(sizeof(struct node));
+    temp =(struct node *) (struct node *) malloc(sizeof(struct node));;
 
     // Enter the number
     printf("\nEnter number to"
            " be inserted : ");
-    scanf("%d", &data);
+    scanf("%d", &temp->data);
 
     // Changes links
     temp->link = 0;
-    temp->data = data;
     head = start;
     while (head->link != NULL)
     {
@@ -79,16 +75,15 @@ void insertAtEnd()
 void insertAtPosition()
 {
     struct node *temp, *newnode;
-    int pos, data, i = 1;
-    newnode = malloc(sizeof(struct node));
+    int pos, i = 1;
+    newnode = (struct node *) malloc(sizeof(struct node));;
 
     // Enter the position and data
     printf("\nEnter position and data :");
-    scanf("%d %d", &pos, &data);
+    scanf("%d %d", &pos, &newnode->data);
 
     // Change Links
     temp = start;
-    newnode->data = data;
     newnode->link = 0;
     while (i < pos - 1)
     {
@@ -152,7 +147,7 @@ void deletePosition()
 
         // Position to be deleted
         scanf("%d", &pos);
-        position = malloc(sizeof(struct node));
+        position = (struct node *) malloc(sizeof(struct node));;
         temp = start;
 
         // Traverse till position
