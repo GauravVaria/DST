@@ -1,11 +1,11 @@
 // C program for the all operations in
 // the Singly Linked List
 #include <stdio.h>
-
+#include <stdlib.h>
 // Linked List Node
 struct node
 {
-    int info;
+    int data;
     struct node *link;
 };
 struct node *start = NULL;
@@ -23,10 +23,10 @@ void traverse()
     else
     {
         temp = start;
+        printf("Linked list = ");
         while (temp != NULL)
         {
-            printf("Data = %d\n",
-                   temp->info);
+            printf("%d ", temp->data);
             temp = temp->link;
         }
     }
@@ -42,7 +42,7 @@ void insertAtFront()
     printf("\nEnter number to"
            " be inserted : ");
     scanf("%d", &data);
-    temp->info = data;
+    temp->data = data;
 
     // Pointer of temp will be
     // assigned to start
@@ -65,7 +65,7 @@ void insertAtEnd()
 
     // Changes links
     temp->link = 0;
-    temp->info = data;
+    temp->data = data;
     head = start;
     while (head->link != NULL)
     {
@@ -88,7 +88,7 @@ void insertAtPosition()
 
     // Change Links
     temp = start;
-    newnode->info = data;
+    newnode->data = data;
     newnode->link = 0;
     while (i < pos - 1)
     {
